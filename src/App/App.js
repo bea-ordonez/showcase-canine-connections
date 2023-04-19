@@ -5,6 +5,7 @@ import { Header } from '../Header/Header';
 import DogFacts from '../DogFacts/DogFacts';
 import Form from '../Form/Form'
 import './App.css';
+import BreedDetails from '../BreedDetails/BreedDetails';
 
 function App() {
   const [dogDetails, setDogDetails] = useState([]);
@@ -19,13 +20,13 @@ function App() {
     getData();
   }, []);
 
-  function renderData() {
-    return dogDetails.map(obj =>
-      <div>
-        <h2>{obj.attributes.name}</h2>
-      </div>
-    )
-  }
+  // function renderData() {
+  //   return dogDetails.map(obj =>
+  //     <div>
+  //       <h2>{obj.attributes.name}</h2>
+  //     </div>
+  //   )
+  // }
 
   useEffect(() => {
     async function getData() {
@@ -37,9 +38,14 @@ function App() {
 
 return (
   <main className='App'> 
-    <Header />
+  <Routes> 
+            <Route path="/" component={<><Header />
     <DogFacts facts={dogFacts}/>
-    <Form />
+    <Form /></> } /> 
+            <Route path="/about" component={<About/> } /> 
+       </Routes> 
+    
+    <BreedDetails breed={dogDetails} />
     
     {/* <h2>Name: {renderData()}</h2> */}
   </main>
