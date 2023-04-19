@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import React, {useEffect, useState} from 'react';
 import fetchDogDetails from '../Apicalls'; 
+import { Header } from '../Header/Header'; 
 import './App.css';
 
 function App() {
@@ -22,16 +23,12 @@ function App() {
       </div>
     )
   }
-    
   
-
 return (
-  <> 
+  <main className='App'> 
+    <Header />
     <h2>Name: {renderData()}</h2>
-  </>
-
-)
-
-}
+  </main>
+)}
 
 export default App;
