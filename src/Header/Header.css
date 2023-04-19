@@ -2,9 +2,12 @@
 
 header {
     display: flex;
-    align-items: center;
+    justify-content: center;
 }
 
 .header-logo {
     font-family: 'Racing Games', sans-serif;
+    font-size: 5rem;
+    color:#058240;
+    margin: 2px;
 }
