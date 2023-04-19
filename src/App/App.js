@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchDogDetails, fetchDogFacts } from '../Apicalls'; 
 import { Header } from '../Header/Header'; 
 import DogFacts from '../DogFacts/DogFacts';
+import Form from '../Form/Form'
 import './App.css';
 
 function App() {
@@ -38,6 +39,7 @@ return (
   <main className='App'> 
     <Header />
     <DogFacts facts={dogFacts}/>
+    <Form />
     
     {/* <h2>Name: {renderData()}</h2> */}
   </main>
