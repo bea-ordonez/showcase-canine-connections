@@ -30,30 +30,10 @@ function App() {
     async function getData() {
       const response = await fetchDogFacts();
       setDogFacts(response.data)
-      console.log('factsresponseDATA',response.data)
     }
     getData();
   }, [])
 
-  // function renderFact() {
-  //   return dogFacts.map(obj => 
-  //     <div>
-  //       <p>{obj.attributes.body}</p>
-  //     </div>)
-  // }
-  function renderFact() {
-    if (dogFacts.length === 0) {
-      return <p>LOADING...</p>
-    } else {
-      return dogFacts.map((obj, index) => 
-        <div key={index}>
-          <p>{obj.attributes.body}</p>
-        </div>)
-    }
-  }
-
-
-  
 return (
   <main className='App'> 
     <Header />
