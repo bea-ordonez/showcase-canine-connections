@@ -9,7 +9,7 @@ function DogFacts({ facts }) {
           <div className="dog-facts">
             {facts.map((fact, index) => (
               <div key={index}>
-                <p>Did you know?</p>
+                <p className="did-you-know">Did you know?</p>
                 <p>{fact.attributes.body}</p>
               </div>
             ))}
