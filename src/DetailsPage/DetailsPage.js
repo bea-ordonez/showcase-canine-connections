@@ -25,7 +25,6 @@ const DetailsPage = ({ searchTerm }) => {
       <>
        <Header />
         {dogDetails.map(getBreedInfo)}
-        
       </>
         // <div>hi, you searched for {props.searchTerm}</div>
         // <BreedDetails details={dogDetails}/>
