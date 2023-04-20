@@ -1,25 +1,22 @@
 import { render } from '@testing-library/react';
 import React, { useEffect, useState } from 'react';
-import { fetchDogDetails, fetchDogFacts } from '../Apicalls'; 
+import { fetchDogFacts } from '../Apicalls'; 
 import { Header } from '../Header/Header'; 
 import DogFacts from '../DogFacts/DogFacts';
 import Form from '../Form/Form'
 import './App.css';
 import BreedDetails from '../BreedDetails/BreedDetails';
+import DetailsPage from '../DetailsPage/DetailsPage';
+import MainPage from '../MainPage/MainPage';
+import { Route, Switch } from 'react-router-dom';
 
 function App() {
-  const [dogDetails, setDogDetails] = useState([]);
-  const [dogFacts, setDogFacts] = useState([]);
+  //
   
-
-  useEffect(() => {
-    async function getData() {
-      const response = await fetchDogDetails();
-      setDogDetails(response.data);
-    }
-    getData();
-  }, []);
-
+  
+/*
+  
+*/
   // function renderData() {
   //   return dogDetails.map(obj =>
   //     <div>
@@ -28,24 +25,17 @@ function App() {
   //   )
   // }
 
-  useEffect(() => {
-    async function getData() {
-      const response = await fetchDogFacts();
-      setDogFacts(response.data)
-    }
-    getData();
-  }, [])
+  
 
 return (
   <main className='App'> 
-  <Routes> 
-            <Route path="/" component={<><Header />
-    <DogFacts facts={dogFacts}/>
-    <Form /></> } /> 
-            <Route path="/about" component={<About/> } /> 
-       </Routes> 
+    <Switch> 
+      <Route path="/details/:search" component={({match}) => <DetailsPage searchTerm={match.params.search} />} />
+      <Route path="/" component={() => <MainPage />} />
+       
+    </Switch> 
     
-    <BreedDetails breed={dogDetails} />
+    
     
     {/* <h2>Name: {renderData()}</h2> */}
   </main>

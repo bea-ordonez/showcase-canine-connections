@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import BreedDetails from '../BreedDetails/BreedDetails';
 import './Form.css';
+import { Link } from 'react-router-dom';
 
 function Form() {
     const [searchTerm, setSearchTerm] = useState('');
@@ -12,6 +13,7 @@ function Form() {
     }
   
     const handleSubmit = async (event) => {
+        /*
       event.preventDefault();
       const response = await fetch(`https://api.thedogapi.com/v1/breeds/search?q=${searchTerm}`);
       console.log('response', response)
@@ -22,6 +24,7 @@ function Form() {
       } else {
         setBreed(null);
       }
+*/
     }
   
     return(
@@ -31,7 +34,10 @@ function Form() {
           <label>
               <input placeholder="Search Breed Name" type="text" value={searchTerm} onChange={handleChange} />
           </label>
-          <button>Search</button>
+          <Link to={`/details/${searchTerm}`} >
+            <button>Search</button>
+          </Link>
+          
         </form>
         {breed && <BreedDetails breed={breed} />}
       </div>
