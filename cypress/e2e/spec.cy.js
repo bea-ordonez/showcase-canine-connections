@@ -24,5 +24,12 @@ describe('Main Page', () => {
       .and('contain', 'A German Shepherd guide dog led her blind companion the entire 2,100 mile Appalachian Trail.');
   });
 
+  // it('should navigate to details page when you click submit', () => {
+  //   cy.get('input')
+  //   cy.get('button[type="submit"]').click();
+  //   cy.url().should('include', '/Afghan')
+
+  // })
+
 
 })
