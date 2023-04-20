@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 import { Header } from '../Header/Header'; 
 import DogFacts from '../DogFacts/DogFacts';
 import Form from '../Form/Form';
@@ -19,10 +18,10 @@ const MainPage = () => {
     return (
         <>
           <Header />
-            <DogFacts facts={dogFacts}/>
+          <DogFacts facts={dogFacts}/>
           <Form />
         </>
     )
 }
 
-export default MainPage
+export default MainPage;

@@ -8,7 +8,7 @@ function Form() {
     const [breed, setBreed] = useState(null);
   
     const handleChange = (event) => {
-        console.log('event',event.target.value)
+
       setSearchTerm(event.target.value);
     }
   

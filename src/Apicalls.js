@@ -1,13 +1,12 @@
-async function fetchDogDetails() {
+async function fetchDogDetails(searchTerm) {
   try {
-    const response = await fetch('https://dogapi.dog/api/v2/breeds');
+    const response = await fetch(`https://api.thedogapi.com/v1/breeds/search?q=${searchTerm}`);
     if(!response.ok) {
         throw new Error(response.status);
     }
     const data = await response.json();
     return data;
   } catch (error) {
-    console.log(error)
   }
 }
 
@@ -20,7 +19,6 @@ async function fetchDogFacts() {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.log(error)
   }
 }
 

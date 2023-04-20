@@ -30,14 +30,9 @@ function App() {
 return (
   <main className='App'> 
     <Switch> 
-      <Route path="/details/:search" component={({match}) => <DetailsPage searchTerm={match.params.search} />} />
+      <Route path="/details/:searchTerm" component={({match}) => <DetailsPage searchTerm={match.params.searchTerm} />} />
       <Route path="/" component={() => <MainPage />} />
-       
     </Switch> 
-    
-    
-    
-    {/* <h2>Name: {renderData()}</h2> */}
   </main>
   
 )}
