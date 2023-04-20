@@ -7,13 +7,19 @@ import { fetchDogDetails, fetchDogFacts } from '../Apicalls';
 const MainPage = () => {
     const [dogFacts, setDogFacts] = useState([]);
 
+    // useEffect(() => {
+    //     async function getData() {
+    //     const response = await fetchDogFacts();
+    //     setDogFacts(response.data)
+    //     }
+    //     getData();
+    // }, [])
+
     useEffect(() => {
-        async function getData() {
-        const response = await fetchDogFacts();
-        setDogFacts(response.data)
-        }
-        getData();
-    }, [])
+      fetchDogFacts().then(response => {
+          setDogFacts(response.data);
+      });
+    }, []);
 
     return (
         <>
