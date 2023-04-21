@@ -24,7 +24,7 @@ const MainPage = () => {
     return (
         <>
           <Header />
-          <DogFacts facts={dogFacts}/>
+          <DogFacts facts={dogFacts} />
           <Form />
         </>
     )

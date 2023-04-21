@@ -1,10 +1,15 @@
 import React from 'react';
 import './DogFacts.css';
 
-function DogFacts({ facts }) {
-    if(!facts) {
-        return null;
-    } else {
+function DogFacts({ facts, errorCode }) {
+    // if(!facts) {
+    //     return (
+    //       <div>
+    //         <p>Error Code: {errorCode}</p>
+    //         <p>No dog facts found.</p>
+    //       </div>
+    //     );
+    // } else {
         return (
           <div className="dog-facts">
             {facts.map((fact, index) => (
@@ -16,6 +21,6 @@ function DogFacts({ facts }) {
           </div>
         );
     }
-}
+// }
 
 export default DogFacts;

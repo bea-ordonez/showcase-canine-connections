@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchDogDetails } from '../Apicalls';
 import BreedDetails from '../BreedDetails/BreedDetails';
 import { Header } from '../Header/Header';
+import { Link } from 'react-router-dom';
 
 const DetailsPage = ({ searchTerm }) => {
     const [dogDetails, setDogDetails] = useState([]);
@@ -24,11 +25,11 @@ const DetailsPage = ({ searchTerm }) => {
     return (
       <>
        <Header />
+          <Link to="/">
+            <button>Go Back</button>
+          </Link>
         {dogDetails.map(getBreedInfo)}
       </>
-        // <div>hi, you searched for {props.searchTerm}</div>
-        // <BreedDetails details={dogDetails}/>
-
     )
 }
 
