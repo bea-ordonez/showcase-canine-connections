@@ -18,4 +18,9 @@ describe('Details page', () => {
         cy.get('.info-card > :nth-child(5)').should('contain', '10 - 13')
         cy.get('.info-card > :nth-child(6)').should('contain', 'Aloof, Clownish, Dignified, Independent, Happy')
     })
+
+    //test for more results
+    //test for error when there are no matches
+    //test for error when there is a server error, use intercept
+    //test the button takes you back to main page
 })

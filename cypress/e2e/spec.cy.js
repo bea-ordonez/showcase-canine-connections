@@ -31,5 +31,9 @@ describe('Main Page', () => {
 
   // })
 
+  //test that error shows up if there is no fact
+  //test for error if there are no facts due to server error
+  // test that it navigates to details page
+
 
 })

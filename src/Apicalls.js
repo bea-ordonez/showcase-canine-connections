@@ -7,22 +7,21 @@ async function fetchDogDetails(searchTerm) {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.log('error', error)
     throw error
   }
+
 }
 
 async function fetchDogFacts() {
   try {
     const response = await fetch('https://dogapi.dog/api/v2/facts');
     if(!response.ok) {
-        throw new Error(response.status);
+      return "Fact: There was an error when trying to fetch a dog fact."
     }
     const data = await response.json();
-    return data;
+    return data.data[0].attributes.body;
   } catch (error) {
-    console.log('error', error)
-    throw error
+    return "Fact: No dog fact could be fetched."
   }
 }
 

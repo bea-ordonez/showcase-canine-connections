@@ -1,15 +1,13 @@
 import React from 'react';
 import './DogFacts.css';
 
-function DogFacts({ facts }) {
+function DogFacts({ fact }) {
         return (
           <div className="dog-facts">
-            {facts.map((fact, index) => (
-              <div key={index}>
+              <div>
                 <p className="did-you-know">Did you know?</p>
-                <p>{fact.attributes.body}</p>
+                <p>{fact}</p>
               </div>
-            ))}
           </div>
         );
     }
