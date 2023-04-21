@@ -7,6 +7,8 @@ async function fetchDogDetails(searchTerm) {
     const data = await response.json();
     return data;
   } catch (error) {
+    console.log('error', error)
+    throw error
   }
 }
 
@@ -19,6 +21,8 @@ async function fetchDogFacts() {
     const data = await response.json();
     return data;
   } catch (error) {
+    console.log('error', error)
+    throw error
   }
 }
 

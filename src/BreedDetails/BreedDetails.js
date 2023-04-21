@@ -14,6 +14,5 @@ function BreedDetails({ details }) {
         </div>
       )
   }
-// }
 
 export default BreedDetails;

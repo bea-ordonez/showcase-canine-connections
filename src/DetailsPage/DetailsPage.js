@@ -13,7 +13,6 @@ const DetailsPage = ({ searchTerm }) => {
           setDogDetails(response);
         }
         getData();
-      
       }, []);
 
    function getBreedInfo(info) {
