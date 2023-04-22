@@ -24,16 +24,17 @@ describe('Main Page', () => {
       .and('contain', 'A German Shepherd guide dog led her blind companion the entire 2,100 mile Appalachian Trail.');
   });
 
-  // it('should navigate to details page when you click submit', () => {
-  //   cy.get('input')
-  //   cy.get('button[type="submit"]').click();
-  //   cy.url().should('include', '/Afghan')
+  it('should display breed details when a valid breed is searched', () => {
+    cy.get('input').type('afghan');
+    cy.get('button').click();
+    cy.contains('Afghan Hound').should('be.visible');
+  });
 
-  // })
+
 
   //test that error shows up if there is no fact
   //test for error if there are no facts due to server error
-  // test that it navigates to details page
+  // test that it navigates to details page X
 
 
 })
