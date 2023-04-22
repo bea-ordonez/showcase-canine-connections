@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import BreedDetails from '../BreedDetails/BreedDetails';
 import './Form.css';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function Form() {
     const [searchTerm, setSearchTerm] = useState('');
@@ -31,3 +32,8 @@ function Form() {
   }
   
   export default Form;
+
+  Form.propTypes = {
+    searchTerm: PropTypes.string,
+    breed: PropTypes.object
+  };

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './DogFacts.css';
 
 function DogFacts({ fact }) {
@@ -14,3 +15,7 @@ function DogFacts({ fact }) {
     }
 
 export default DogFacts;
+
+DogFacts.propTypes = {
+  fact: PropTypes.string.isRequired
+};
