@@ -2,7 +2,7 @@ async function fetchDogDetails(searchTerm) {
   try {
     const response = await fetch(`https://api.thedogapi.com/v1/breeds/search?q=${searchTerm}`);
     if(!response.ok) {
-        throw new Error(response.status);
+        throw new Error(response.message);
     }
     const data = await response.json();
     return data;
