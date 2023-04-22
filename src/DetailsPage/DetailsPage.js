@@ -37,7 +37,7 @@ const DetailsPage = ({ searchTerm }) => {
           <Link to="/">
             <button>Go Back</button>
           </Link>
-          { dogDetails.length > 0 && dogDetails.map(getBreedInfo) }
+          <div className="info-cards-container">{ dogDetails.length > 0 && dogDetails.map(getBreedInfo) }</div>
           { fetched && dogDetails.length === 0 && !error && <div className='no-matches'>Sorry! There are not matching results.</div> }
           { error && <div>{error}</div> }
         {/*error ? <div>Something went wrong: {error}</div> : dogDetails.map(getBreedInfo)*/}

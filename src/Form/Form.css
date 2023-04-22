@@ -1,6 +1,10 @@
 .prompt {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 6.5vh;
-    border: 3px solid black;
+    border: .5vh solid black;
     background: rgba(21, 72, 49, 0.357);
+}
+
+input {
+    font-size: 1.5vh;
 }
