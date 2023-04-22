@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 function BreedDetails({ details }) {
       return(
-        <div className='info-cards-container'>
           <div className='info-card'>
               <p>Name: {details.name}</p>
               <p>Bred for: {details.bred_for}</p>
@@ -12,7 +11,6 @@ function BreedDetails({ details }) {
               <p>Height: Between {details.height.imperial}in</p>
               <p>Life Span: {details.life_span}</p>
               <p>Temperament: {details.temperament}</p>
-          </div>
         </div>
       )
   }

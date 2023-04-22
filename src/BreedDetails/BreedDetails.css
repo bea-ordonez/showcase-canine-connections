@@ -1,17 +1,13 @@
 .info-card {
     box-sizing: border-box;
-    border: 3px solid black;
-    padding: 20px;
+    border: .5vh solid black;
+    padding: 2vh;
     background-color: #ADCACB;
-    height: 30vh;
-    width: 40vw;
-    border-radius: 1.5em;
+    width: 30vh;
+    border-radius: 2.5vh;
+    overflow-y: scroll;
 }
 
-.info-cards-container {
-    display: flex;
-    margin: 15px;
-    /* flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 1rem 0; */
-  }
+.info-card p {
+    margin-top: 0;
+}
