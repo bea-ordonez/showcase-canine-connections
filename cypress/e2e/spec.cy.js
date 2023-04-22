@@ -1,4 +1,6 @@
 import factsFixture from "../fixtures/factsFixture";
+import factsEmptyFixture from "../fixtures/factsEmptyFixture";
+import factsErrorFixture from "../fixtures/factsErrorFixture";
 
 describe('Main Page', () => {
   beforeEach(() => {
@@ -29,6 +31,16 @@ describe('Main Page', () => {
     cy.get('button').click();
     cy.contains('Afghan Hound').should('be.visible');
   });
-  //test that error shows up if there is no fact
-  //test for error if there are no facts due to server error
+
+  it('should display message if there are no facts', () => {
+    cy.intercept({method: 'GET', url: 'https://dogapi.dog/api/v2/facts'}, factsEmptyFixture)
+    cy.visit('http://localhost:3000/');
+    cy.contains('Sorry, no facts available.').should('be.visible');
+  });
+
+  it('should display message if there is an error while fetching facts', () => {
+    cy.intercept({method: 'GET', url: 'https://dogapi.dog/api/v2/facts'}, factsErrorFixture)
+    cy.visit('http://localhost:3000/');
+    cy.contains('Fact: There was an error when trying to fetch a dog fact.').should('be.visible');
+  });
 })

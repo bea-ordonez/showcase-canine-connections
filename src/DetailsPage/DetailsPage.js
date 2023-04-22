@@ -9,16 +9,17 @@ import './DetailsPage.css';
 const DetailsPage = ({ searchTerm }) => {
     const [fetched, setFetched] = useState(false);
     const [dogDetails, setDogDetails] = useState([]);
-    const [error, setError] = useState(null);
+    const [error, setError] = useState('');
 
     useEffect(() => {
       async function getData() {
         try {
+          // throw new Error('shiiiit')
           const response = await fetchDogDetails(searchTerm);
           setDogDetails(response);
           setFetched(true);
         } catch (error) {
-          setError(error.message);
+          setError('An internal server error has occurred.');
         }
       }
       getData();

@@ -1,9 +1,9 @@
+import detailsErrorFixture from "../fixtures/detailsErrorFixture";
 import detailsFixture from "../fixtures/detailsFixture";
 
 describe('Details page', () => {
   beforeEach(() => {
-        // cy.intercept({method: 'GET', url: '/api/breeds/afghan-hound'}, detailsFixture)
-    cy.visit('http://localhost:3000/details/afghan%20hound');
+    cy.visit('http://localhost:3000/details/afghan');
   });
 
   it('should display header', () => {
@@ -28,5 +28,12 @@ describe('Details page', () => {
     cy.visit('http://localhost:3000/details/nomatch');
     cy.contains('Sorry! There are not matching results.').should('be.visible');
   });
-    //test for error when there is a server error, use intercept
+
+  it('should display error message if breed details cannot be fetched', () => {
+    cy.intercept({method: 'GET', url: 'https://api.thedogapi.com/v1/breeds/search?q=shepherd'}, detailsErrorFixture)
+    .as('getData');
+    cy.visit('http://localhost:3000/details/shepherd');
+    cy.wait('@getData');
+    cy.contains('An internal server error has occurred.').should('be.visible');
+  })
 })
