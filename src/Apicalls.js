@@ -9,7 +9,6 @@ async function fetchDogDetails(searchTerm) {
   } catch (error) {
     throw error
   }
-
 }
 
 async function fetchDogFacts() {

@@ -1,14 +1,15 @@
 button {
   cursor: pointer;
-  border-radius: 3em;
+  border-radius: 1.5vh;
   background-color: #f7f9fa;
-  height: 35px;
-  width: 55px;
+  height: 4vh;
+  width: 8vh;
+  font-size: 1.5vh;
 }
 
 .info-cards-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: 5vh;
 }
