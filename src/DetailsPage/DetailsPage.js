@@ -22,7 +22,7 @@ const DetailsPage = ({ searchTerm }) => {
         }
       }
       getData();
-    }, []);
+    }, [searchTerm]);
 
    function getBreedInfo(info) {
      return(
