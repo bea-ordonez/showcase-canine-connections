@@ -1,5 +1,6 @@
 import React from 'react';
 import './BreedDetails.css';
+import PropTypes from 'prop-types';
 
 
 function BreedDetails({ details }) {
@@ -18,3 +19,18 @@ function BreedDetails({ details }) {
   }
 
 export default BreedDetails;
+
+BreedDetails.propTypes = {
+  details: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    bred_for: PropTypes.string.isRequired,
+    weight: PropTypes.shape({
+      imperial: PropTypes.string.isRequired,
+    }).isRequired,
+    height: PropTypes.shape({
+      imperial: PropTypes.string.isRequired,
+    }).isRequired,
+    life_span: PropTypes.string.isRequired,
+    temperament: PropTypes.string.isRequired,
+  }).isRequired,
+};
