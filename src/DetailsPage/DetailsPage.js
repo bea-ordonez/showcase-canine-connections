@@ -3,17 +3,17 @@ import { fetchDogDetails } from '../Apicalls';
 import BreedDetails from '../BreedDetails/BreedDetails';
 import { Header } from '../Header/Header';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './DetailsPage.css';
 
 const DetailsPage = ({ searchTerm }) => {
     const [fetched, setFetched] = useState(false);
     const [dogDetails, setDogDetails] = useState([]);
-    const [error, setError] = useState(null)
+    const [error, setError] = useState(null);
 
     useEffect(() => {
       async function getData() {
         try {
-          
           const response = await fetchDogDetails(searchTerm);
           setDogDetails(response);
           setFetched(true);
@@ -39,7 +39,6 @@ const DetailsPage = ({ searchTerm }) => {
           { dogDetails.length > 0 && dogDetails.map(getBreedInfo) }
           { fetched && dogDetails.length === 0 && !error && <div className='no-matches'>Sorry! There are not matching results.</div> }
           { error && <div>{error}</div> }
-
         {/*error ? <div>Something went wrong: {error}</div> : dogDetails.map(getBreedInfo)*/}
         {/* {error && <div>Error: {error}</div>} */}
       </>
@@ -47,3 +46,7 @@ const DetailsPage = ({ searchTerm }) => {
 }
 
 export default DetailsPage;
+
+DetailsPage.propTypes = {
+  searchTerm: PropTypes.string.isRequired
+};
