@@ -5,26 +5,18 @@ import Form from '../Form/Form';
 import { fetchDogDetails, fetchDogFacts } from '../Apicalls'; 
 
 const MainPage = () => {
-    const [dogFacts, setDogFacts] = useState([]);
+    const [dogFacts, setDogFacts] = useState("Loading...");
 
-    // useEffect(() => {
-    //     async function getData() {
-    //     const response = await fetchDogFacts();
-    //     setDogFacts(response.data)
-    //     }
-    //     getData();
-    // }, [])
-
-    useEffect(() => {
-      fetchDogFacts().then(response => {
-          setDogFacts(response.data);
-      });
+    useEffect(() => {    
+        fetchDogFacts().then(response => {
+              setDogFacts(response);
+          });
     }, []);
 
     return (
         <>
           <Header />
-          <DogFacts facts={dogFacts} />
+          <DogFacts fact={dogFacts} />
           <Form />
         </>
     )

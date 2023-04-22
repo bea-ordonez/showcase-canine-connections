@@ -5,16 +5,23 @@ import { Header } from '../Header/Header';
 import { Link } from 'react-router-dom';
 
 const DetailsPage = ({ searchTerm }) => {
+    const [fetched, setFetched] = useState(false);
     const [dogDetails, setDogDetails] = useState([]);
+    const [error, setError] = useState(null)
 
     useEffect(() => {
-        async function getData() {
+      async function getData() {
+        try {
+          
           const response = await fetchDogDetails(searchTerm);
           setDogDetails(response);
+          setFetched(true);
+        } catch (error) {
+          setError(error.message);
         }
-        getData();
-      
-      }, []);
+      }
+      getData();
+    }, []);
 
    function getBreedInfo(info) {
      return(
@@ -24,11 +31,16 @@ const DetailsPage = ({ searchTerm }) => {
 
     return (
       <>
-       <Header />
+       <Header />         
           <Link to="/">
             <button>Go Back</button>
           </Link>
-        {dogDetails.map(getBreedInfo)}
+          { dogDetails.length > 0 && dogDetails.map(getBreedInfo) }
+          { fetched && dogDetails.length === 0 && !error && <div className='no-matches'>Sorry! There are not matching results.</div> }
+          { error && <div>{error}</div> }
+
+        {/*error ? <div>Something went wrong: {error}</div> : dogDetails.map(getBreedInfo)*/}
+        {/* {error && <div>Error: {error}</div>} */}
       </>
     )
 }

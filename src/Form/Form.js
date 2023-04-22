@@ -12,34 +12,20 @@ function Form() {
       setSearchTerm(event.target.value);
     }
   
-    const handleSubmit = async (event) => {
-        /*
-      event.preventDefault();
-      const response = await fetch(`https://api.thedogapi.com/v1/breeds/search?q=${searchTerm}`);
-      console.log('response', response)
-      const data = await response.json();
-      console.log('data', data)
-      if (data.length > 0) {
-        setBreed(data[0]);
-      } else {
-        setBreed(null);
-      }
-*/
-    }
-  
     return(
       <div>
-        <form onSubmit={handleSubmit}>
+        <form>
           <p>Find Your Perfect Dog Breed</p>
           <label>
               <input placeholder="Search Breed Name" type="text" value={searchTerm} onChange={handleChange} />
           </label>
           <Link to={`/details/${searchTerm}`} >
-            <button>Search</button>
+            <button disabled={searchTerm === ''}>Search</button>
           </Link>
-          
-        </form>
+  
         {breed && <BreedDetails breed={breed} />}
+
+        </form>
       </div>
     )
   }
