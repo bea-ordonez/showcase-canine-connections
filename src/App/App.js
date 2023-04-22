@@ -11,12 +11,9 @@ import MainPage from '../MainPage/MainPage';
 import { Route, Switch } from 'react-router-dom';
 
 function App() {
-  // const [error, setError] = useState('')
-
 return (
   <main className='App'> 
     <Switch> 
-      {/* {error && <p className="error-message">{error}</p>} */}
       <Route path="/details/:searchTerm" component={({match}) => <DetailsPage searchTerm={match.params.searchTerm} />} />
       <Route path="/" component={() => <MainPage />} />
     </Switch> 
