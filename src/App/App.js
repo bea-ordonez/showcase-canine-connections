@@ -1,11 +1,5 @@
-import { render } from '@testing-library/react';
-import React, { useEffect, useState } from 'react';
-import { fetchDogFacts } from '../Apicalls'; 
-import { Header } from '../Header/Header'; 
-import DogFacts from '../DogFacts/DogFacts';
-import Form from '../Form/Form'
+import React from 'react';
 import './App.css';
-import BreedDetails from '../BreedDetails/BreedDetails';
 import DetailsPage from '../DetailsPage/DetailsPage';
 import MainPage from '../MainPage/MainPage';
 import { Route, Switch } from 'react-router-dom';

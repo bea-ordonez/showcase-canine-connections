@@ -2,7 +2,6 @@ import React from 'react';
 import './BreedDetails.css';
 import PropTypes from 'prop-types';
 
-
 function BreedDetails({ details }) {
       return(
         <div className='info-cards-container'>
