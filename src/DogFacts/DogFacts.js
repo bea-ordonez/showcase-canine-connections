@@ -2,6 +2,7 @@ import React from 'react';
 import './DogFacts.css';
 
 function DogFacts({ fact }) {
+  console.log(fact)
         return (
           <div className="dog-facts">
               <div>

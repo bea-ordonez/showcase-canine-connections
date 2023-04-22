@@ -30,6 +30,8 @@ describe('Main Page', () => {
     cy.contains('Afghan Hound').should('be.visible');
   });
 
+ 
+
 
 
   //test that error shows up if there is no fact
