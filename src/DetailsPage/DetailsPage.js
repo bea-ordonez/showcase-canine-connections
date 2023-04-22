@@ -12,7 +12,7 @@ const DetailsPage = ({ searchTerm }) => {
     useEffect(() => {
       async function getData() {
         try {
-
+          
           const response = await fetchDogDetails(searchTerm);
           setDogDetails(response);
           setFetched(true);
@@ -36,7 +36,7 @@ const DetailsPage = ({ searchTerm }) => {
             <button>Go Back</button>
           </Link>
           { dogDetails.length > 0 && dogDetails.map(getBreedInfo) }
-          { fetched && dogDetails.length === 0 && !error && <div>Sorry! There are not matching results.</div> }
+          { fetched && dogDetails.length === 0 && !error && <div className='no-matches'>Sorry! There are not matching results.</div> }
           { error && <div>{error}</div> }
 
         {/*error ? <div>Something went wrong: {error}</div> : dogDetails.map(getBreedInfo)*/}

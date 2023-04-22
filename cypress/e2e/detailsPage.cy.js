@@ -19,7 +19,11 @@ describe('Details page', () => {
         cy.get('.info-card > :nth-child(6)').should('contain', 'Aloof, Clownish, Dignified, Independent, Happy')
     })
 
-    //test for more results
+    it('should display an error message if there are not matches to the search', () => {
+        cy.visit('http://localhost:3000/details/nomatch');
+        cy.contains('Sorry! There are not matching results.').should('be.visible');
+      });
+      
     //test for error when there are no matches
     //test for error when there is a server error, use intercept
     //test the button takes you back to main page
