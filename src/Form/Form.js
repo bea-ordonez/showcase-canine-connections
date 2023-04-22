@@ -15,7 +15,7 @@ function Form() {
     return(
       <div>
         <form>
-          <p>Find Your Perfect Dog Breed</p>
+          <p className="prompt">Find Your Perfect Dog Breed!</p>
           <label>
               <input placeholder="Search Breed Name" type="text" value={searchTerm} onChange={handleChange} />
           </label>

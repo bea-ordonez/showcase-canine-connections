@@ -1,8 +1,7 @@
-/* .info-cards {
-    display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  padding: 4vh;
-  background-color: black;
-
-} */
+button {
+  cursor: pointer;
+  border-radius: 3em;
+  background-color: #f7f9fa;
+  height: 35px;
+  width: 55px;
+}

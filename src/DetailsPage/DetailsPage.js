@@ -3,6 +3,7 @@ import { fetchDogDetails } from '../Apicalls';
 import BreedDetails from '../BreedDetails/BreedDetails';
 import { Header } from '../Header/Header';
 import { Link } from 'react-router-dom';
+import './DetailsPage.css';
 
 const DetailsPage = ({ searchTerm }) => {
     const [fetched, setFetched] = useState(false);
