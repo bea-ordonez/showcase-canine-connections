@@ -6,7 +6,7 @@ Canine Connection is a React project that aims to provide a platform for dog ent
 
 ## Preview of App:
 [//]: <>
-![](src/assets/demo.gif)
+![Canine Connection](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTUzOGEwNjI0Y2M1MDRjZmFmMTcyNWE2OWQxYWNmNzhkZDU3YzExMSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/U1ZM76W45LOC8LlAPk/giphy.gif)
 
 ## Live demo:
 Application is deployed live at: [Canine Connection](https://showcase-canine-connections.vercel.app/)
