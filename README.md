@@ -17,6 +17,9 @@ Application is deployed live at: [Canine Connection](https://showcase-canine-con
 
 ## Installation Instructions:
 [//]: <>
+- Clone down repository
+- Navigate to project directory and install dependencies using npm install
+- run npm start and then npm run build
 
 ## Context:
 [//]: <>
