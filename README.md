@@ -9,7 +9,7 @@
 ![](src/assets/demo.gif)
 
 ## Live demo:
-Application is deployed live at: (<deployment link here>)
+Application is deployed live at: (<deployment https://showcase-canine-connections.vercel.app/e>)
 
 ## Context:
 [//]: <>
